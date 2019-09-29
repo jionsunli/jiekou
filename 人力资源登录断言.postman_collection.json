@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "a00f4da6-f2e3-4133-9753-c4d2d76be4db",
+		"name": "人力资源登录断言",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bbc24847-f5b3-4c5d-b2f6-88322b3a61bc",
+						"exec": [
+							"pm.test(\"code is 10000\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							" ",
+							"  ",
+							" ",
+							"pm.test(\"code is 10000\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(code).to.eql(10000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"mobile\":\"13800000002\", \r\n\"password\":\"123456\"}"
+				},
+				"url": {
+					"raw": "http://182.92.81.159/api/sys/login",
+					"protocol": "http",
+					"host": [
+						"182",
+						"92",
+						"81",
+						"159"
+					],
+					"path": [
+						"api",
+						"sys",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
